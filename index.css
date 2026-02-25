@@ -1,6 +1,6 @@
 :root {
   color-scheme: light dark;
-  font-size: 1.5em;
+  /* font-size: 1.5em; */
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -13,15 +13,32 @@ h1 {
 }
 
 main {
-  max-width: 70ch;
+  max-width: min(100svw, 75ch);
   margin-inline: auto;
 
   & * {
     text-wrap: pretty;
   }
 
-  & #ads + img {
-    background-color: #CCC;
+  & #ads {
+    & figure {
+      & img {
+        background-color: light-dark(#999C, #CCCB);
+        max-width: min(100svw, 100%);
+      }
+
+      & figcaption {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        & p {
+          display: inline-block;
+          text-align: center;
+          width: calc_size(max-content, min(100dvw, size));
+        }
+      }
+    }
   }
 
   #connect ul {
