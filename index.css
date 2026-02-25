@@ -1,0 +1,38 @@
+:root {
+  color-scheme: light dark;
+  font-size: 1.5em;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+main {
+  max-width: 70ch;
+  margin-inline: auto;
+
+  & * {
+    text-wrap: pretty;
+  }
+
+  & #ads + img {
+    background-color: #CCC;
+  }
+
+  #connect ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  & .icon {
+    max-height: 3em;
+    min-width: 4em;
+  }
+}
