@@ -1,1 +1,107 @@
-index.css
+:root {
+  color-scheme: light dark;
+  font-size: clamp(1.25rem, 2dvw, 1.5em) ;
+  font-family: Genos, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: regular;
+}
+
+h1, h2 {
+  text-align: center;
+  max-width: 20ch;
+  margin-inline: auto;
+  text-decoration-line: blink;
+}
+
+header {
+  margin-top: -0rem;
+  margin-bottom: 3.5rem;
+}
+
+h1 {
+  font-size: 4em;
+  background-image: url("Purple%20Leopard.svg");
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: #FFF4;
+  -webkit-text-stroke: white 0.05rem;
+  font-weight: 900;
+
+  & img {
+    max-height: 3em;
+    position: relative;
+    top: 5rem;
+  }
+
+  & span:nth-of-type(2) {
+    margin-top: -2rem;
+  }
+}
+
+h2 {
+  font-weight: 700;
+}
+
+main {
+  max-width: min(100svw, 75ch);
+  margin-inline: auto;
+
+  & * {
+    text-wrap: pretty;
+  }
+
+  & li:has(details) {
+    list-style: none;
+  }
+
+  & #ads {
+    & figure {
+      & img {
+        background-color: light-dark(#999C, #CCCB);
+        max-width: min(100svw, 100%);
+      }
+
+      & figcaption {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        & p {
+          display: inline-block;
+          text-align: center;
+          width: calc_size(max-content, min(100dvw, size));
+        }
+      }
+    }
+  }
+
+  #connect ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  & .icon {
+    max-height: 3em;
+    min-width: 4em;
+  }
+}
+
+details {
+  @media (prefers-reduced-motion: no-preference) {
+    interpolate-size: allow-keywords;
+  }
+
+  &::details-content {
+    opacity: 0;
+    block-size: 0;
+    overflow-y: clip;
+    transition: content-visibility 0.5s allow-discrete, opacity 1s, block-size 1s;
+  }
+
+  &[open]::details-content {
+    opacity: 1;
+    block-size: auto;
+  }
+}
+
