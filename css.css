@@ -17,13 +17,40 @@ header {
   margin-bottom: 3.5rem;
 }
 
+:root {
+  /* Scale ratios based on musical intervals */
+  --scale-minor-second: 1.067;
+  --scale-major-second: 1.125;
+  --scale-minor-third: 1.2;
+  --scale-major-third: 1.25;
+  --scale-perfect-fourth: 1.333;
+  --scale-augmented-fourth: 1.414;
+  --scale-perfect-fifth: 1.5;
+  --scale-golden-ratio: 1.618;
+
+  --typographic-scale: var(--scale-major-third);
+
+  --heading-base-size: 1.5rem;
+  --heading-max-level: 6;
+}
+
+:heading {
+  font-size: calc(
+    var(--heading-base-size)
+    * pow(
+      var(--typographic-scale),
+        var(--heading-max-level) - sibling-index()
+    )
+  );
+}
+
 h1 {
-  font-size: 4em;
   background-image: url("Purple%20Leopard.svg");
   background-clip: text;
   -webkit-background-clip: text;
   color: #FFF4;
   -webkit-text-stroke: white 0.05rem;
+  font-size: 5.5rem;
   font-weight: 900;
 
   & img {
