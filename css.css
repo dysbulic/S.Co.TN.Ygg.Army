@@ -77,6 +77,12 @@ main {
   }
 
   & li:has(details) {
+    color: light-dark(#D82755, #E18AA0);
+
+    & summary {
+      color: light-dark(#5127D8, #B1FFEB);
+    }
+
     list-style: none;
   }
 
